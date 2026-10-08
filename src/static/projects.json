@@ -1,0 +1,37 @@
+[
+  {
+    "title": "CloudDrive",
+    "description": "Live cloud storage platform with secure file uploads, automated image processing, and JWT auth. Deployed on AWS with CI/CD and 84% test coverage.",
+    "tags": [
+      "FastAPI",
+      "AWS",
+      "PostgreSQL",
+      "Docker"
+    ],
+    "image": "/Projects/cloud.png",
+    "link": "https://github.com/Mauricio0129/CloudDrive"
+  },
+  {
+    "title": "Layer 7 Load Balancer",
+    "description": "Reverse proxy in Go benchmarked at ~79,000 req/sec locally. Lock-free routing, active health checks, automatic failover, and slowloris mitigation.",
+    "tags": [
+      "Go",
+      "concurrency",
+      "distributed systems"
+    ],
+    "image": "/Projects/load-balancing.png",
+    "link": "https://github.com/Mauricio0129/load-balancer"
+  },
+  {
+    "title": "ReMind — ShellHacks 2025",
+    "description": "Voice AI medication reminder for Parkinson's and dementia patients. Built in 36 hours with VAPI, JWT auth, and automated caregiver notifications.",
+    "tags": [
+      "Python",
+      "FastAPI",
+      "VAPI",
+      "JWT"
+    ],
+    "image": "/Projects/reminder.png",
+    "link": "https://github.com/useyourshadow/ShellHacks25"
+  }
+]

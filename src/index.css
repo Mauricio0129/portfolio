@@ -1,0 +1,268 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Cormorant+Garant:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+:root {
+    --bg: #14171D;
+    --bg-card: #1D2128;
+    --bg-card-border: #31363E;
+    --accent: #B46F33;
+    --accent-hover: #D08B4A;
+    --text-primary: #ECE5DA;
+    --text-muted: #AEB2BE;
+}
+
+@layer base {
+    body {
+        background: linear-gradient(180deg, #171B23 0%, #14171D 55%, #101317 100%);
+        min-height: 100vh;
+        color: var(--text-primary);
+        font-family: 'Google Sans', 'Inter', sans-serif;
+        font-weight: 400;
+    }
+    h1 {
+        font-family: 'Cormorant Garant', serif;
+        font-size: 4.5rem;
+        font-weight: 700;
+        line-height: 1.1;
+        color: var(--text-primary);
+    }
+    h2 {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.15rem;
+        font-weight: 400;
+        color: var(--text-muted);
+        line-height: 1.6;
+    }
+    h3 {
+        font-family: 'Cormorant Garant', serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--accent);
+    }
+    h4 {
+        font-family: 'Cormorant Garant', serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--text-primary);
+    }
+    p {
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        color: var(--text-muted);
+        line-height: 1.7;
+        font-size: 1rem;
+    }
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+    button {
+        font-family: 'Inter', sans-serif;
+        background: transparent;
+        color: var(--accent);
+        padding: 0.6rem 1.6rem;
+        border: 1px solid var(--accent);
+        border-radius: 4px;
+        font-size: 0.85rem;
+        font-weight: 400;
+        cursor: pointer;
+        transition: background 0.2s ease, color 0.2s ease;
+        letter-spacing: 0.05em;
+        margin-top: 1rem;
+    }
+    button:hover {
+        background: var(--accent-hover);
+        color: var(--bg);
+    }
+    button:disabled {
+        opacity: 0.3;
+        cursor: default;
+    }
+    button:disabled:hover {
+        background: transparent;
+        color: var(--accent);
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+@layer components {
+    .App {
+        min-height: 100vh;
+    }
+
+    .nav-container {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 2.5rem;
+        padding: 1.2rem 0;
+        z-index: 9999;
+        background: rgba(10, 15, 30, 0.85);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--bg-card-border);
+    }
+    .nav-link {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.8rem;
+        font-weight: 400;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        transition: color 0.2s ease;
+    }
+    .nav-link:hover {
+        color: var(--accent);
+    }
+
+    .home-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8rem clamp(2rem, 10vw, 10rem) 2rem;
+        gap: 4rem;
+    }
+    #bio-container {
+        max-width: 520px;
+        text-align: left;
+    }
+    #image-container {
+        flex-shrink: 0;
+    }
+    #headshot {
+        width: clamp(220px, 28vw, 360px);
+        height: clamp(220px, 28vw, 360px);
+        object-fit: cover;
+        object-position: 40% top;
+        border-radius: 50%;
+        border: 2px solid var(--accent);
+        box-shadow: 0 0 40px rgba(180, 111, 51, 0.12);
+    }
+
+    .projects-container {
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2rem clamp(2rem, 6vw, 4rem);
+    }
+    .experience-container {
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2rem clamp(2rem, 6vw, 4rem);
+    }
+    .title-header {
+        margin-bottom: 2rem;
+        text-align: left;
+    }
+
+    .experience-timeline {
+        margin-left: 5%;
+    }
+
+    .project-cards-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        width: 100%;
+    }
+    .project-card {
+        background: var(--bg-card);
+        border: 1px solid var(--bg-card-border);
+        border-radius: 8px;
+        padding: 1.8rem;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .project-card:hover {
+        border-color: var(--accent);
+        box-shadow: 0 4px 30px rgba(180, 111, 51, 0.08);
+    }
+    .project-tags {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+    }
+    .tag {
+        padding: 0.25rem 0.7rem;
+        border: 1px solid var(--bg-card-border);
+        border-radius: 4px;
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        font-family: 'Inter', sans-serif;
+        letter-spacing: 0.04em;
+    }
+    .project-image {
+        width: 100%;
+        height: 180px;
+        margin: 1rem 0;
+        border-radius: 12px;
+        overflow: hidden;
+        flex-shrink: 0;
+        margin-top: auto;
+        background: var(--bg-card);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .project-image img {
+        width: 85%;
+        height: 85%;
+        object-fit: contain;
+        mix-blend-mode: screen;
+        border-radius: 12px;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 3rem clamp(2rem, 10vw, 10rem);
+        border-top: 1px solid var(--bg-card-border);
+        margin-top: 2rem;
+    }
+    .footer-quote {
+        font-family: 'Cormorant Garant', serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--text-muted);
+        max-width: 700px;
+        margin: 3rem auto 0;
+        line-height: 1.8;
+    }
+}
+
+.MuiTimelineOppositeContent-root h4 {
+    color: var(--text-muted) !important;
+    font-size: 1rem !important;
+}
+.MuiTimelineContent-root h4 {
+    color: var(--accent) !important;
+}
+.MuiTimelineContent-root p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .home-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 8rem;
+        min-height: auto;
+        padding-bottom: 4rem;
+    }
+    #bio-container {
+        text-align: center;
+    }
+    h1 { font-size: 3rem; }
+    .experience-timeline { margin-left: 0; }
+}

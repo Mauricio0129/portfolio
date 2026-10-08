@@ -1,0 +1,20 @@
+[
+  {
+    "company": "CloudDrive",
+    "start": "Sep 2025 – Jan 2026",
+    "title": "Backend Engineer — Personal Project",
+    "description": "Built and deployed a live cloud storage REST API (clouddrive.world) using FastAPI, PostgreSQL, and AWS. Implemented async Lambda image processing, presigned S3 URLs, IAM roles, and multi-AZ health checks."
+  },
+  {
+    "company": "Layer 7 Load Balancer",
+    "start": "May 2026 – Jun 2026",
+    "title": "Systems Engineer — Personal Project",
+    "description": "Engineered an HTTP/1.1 reverse proxy in Go, benchmarked at ~79,000 req/sec locally. Lock-free atomic snapshots, two-tier health checks, automatic failover, and slowloris mitigation via adaptive read deadlines."
+  },
+  {
+    "company": "asyncpg",
+    "start": "Jul 2026",
+    "title": "Open Source Contributor — PostgreSQL Driver",
+    "description": "Investigated why a wrong password with sslmode=prefer surfaced a misleading \"no encryption\" error, and contributed a fix to asyncpg's connection retry logic, merged upstream (PR #1331)."
+  }
+]
